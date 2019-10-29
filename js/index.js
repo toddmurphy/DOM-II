@@ -5,7 +5,6 @@ busHeader.addEventListener('mouseover', () => {
   busHeader.style.color = 'red';
 });
 
-//keydown event (not sure how to get this working)//use on navigation
 //keydown must be on 'document'
 const imgKeyDown = document.querySelector('.content-section .img-content img');
 document.addEventListener('keydown', event => {
@@ -39,10 +38,10 @@ focusEvent.addEventListener('focus', () => {
 const resizeEvent = document.querySelector('.content-destination img');
 window.addEventListener('resize', event => {
   resizeEvent.src = 'img/bram-van-oost-oOCI35aIA3M-unsplash.jpg';
-  console.log(event);
+  // console.log(event);
 });
 
-//scroll event
+//scroll event -> doesn't work for me because i have trackpad
 const scrollEvent = document.querySelector('body');
 window.addEventListener('scroll', () => {
   body.style.background = 'red';
@@ -51,12 +50,23 @@ window.addEventListener('scroll', () => {
 //select event
 
 //dblclick event
-
 const dblClickEvent = document.querySelector('.nav a');
 dblClickEvent.addEventListener('dblclick', () => {
   dblClickEvent.textContent = "Todd's Bus";
 });
 
 /**** Nest two similar events in the site and prevent event propogation using .stopPropogation() ******/
+const firstClick = document.querySelector('.intro h2');
+firstClick.addEventListener('click', event => {
+  firstClick.style.color = 'blue';
+  console.log(event);
+  event.stopPropagation(); //must go on the child element
+});
+
+const secondClick = document.querySelector('.intro');
+secondClick.addEventListener('click', event => {
+  secondClick.style.background = 'green';
+  console.log(event);
+});
 
 /***** Stop the navigation from items from refreshing the page using .preventDefault() */
