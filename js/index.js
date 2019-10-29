@@ -12,20 +12,10 @@ document.addEventListener('keydown', event => {
   console.log(event);
 });
 
-//wheel event -> won't work for me because i have trackpad
-// const wheelEvent = document.querySelector(
-//   '.content-section .text-content .img-content img'
-// );
-// wheelEvent.addEventListener('wheel', () => {
-//   wheelEvent.style.transform = 'scale(2.0)';
-// });
-
-//drag and drop event
-
 //load event
-const loadEvent = document.querySelector('body');
+const loadEvent = document.querySelector('.logo-heading');
 window.addEventListener('load', () => {
-  alert('Welcome to the Fun Bus Experience');
+  loadEvent.textContent = 'Slow Bus';
 });
 
 //focus event //
@@ -41,19 +31,34 @@ window.addEventListener('resize', event => {
   // console.log(event);
 });
 
+//dblclick event
+const dblClickEvent = document.querySelector('.nav a');
+dblClickEvent.addEventListener('dblclick', () => {
+  dblClickEvent.textContent = "Todd's Bus";
+});
+
 //scroll event -> doesn't work for me because i have trackpad
 const scrollEvent = document.querySelector('body');
 window.addEventListener('scroll', () => {
   body.style.background = 'red';
 });
 
-//select event -> need inputs - didn't modify html
-
-//dblclick event
-const dblClickEvent = document.querySelector('.nav a');
-dblClickEvent.addEventListener('dblclick', () => {
-  dblClickEvent.textContent = "Todd's Bus";
+//mouse enter and mouse leave
+const mouseInEvent = document.querySelector('.intro img');
+mouseInEvent.addEventListener('mouseenter', () => {
+  mouseInEvent.style.transform = 'scale(2)';
+  mouseInEvent.style.transition = 'all 0.5s';
 });
+
+const mouseOutEvent = document.querySelector('.intro img');
+mouseOutEvent.addEventListener('mouseleave', () => {
+  mouseOutEvent.style.transform = 'scale(1)';
+  mouseOutEvent.style.transition = 'all 0.5s';
+});
+
+//Pick a different one
+
+//pick a different one
 
 /**** Nest two similar events in the site and prevent event propogation using .stopPropogation() ******/
 const firstClick = document.querySelector('.intro h2');
