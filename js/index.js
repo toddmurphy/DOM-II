@@ -47,7 +47,7 @@ window.addEventListener('scroll', () => {
   body.style.background = 'red';
 });
 
-//select event
+//select event -> need inputs - didn't modify html
 
 //dblclick event
 const dblClickEvent = document.querySelector('.nav a');
@@ -70,3 +70,11 @@ secondClick.addEventListener('click', event => {
 });
 
 /***** Stop the navigation from items from refreshing the page using .preventDefault() */
+//Added a link (www.google.com) to About us and will use .preventDefault() to stop from going there.
+//MUST add .forEach on the .quertSelectorAll to loop over and get all atags
+const linkPrevent = document.querySelectorAll('.nav a').forEach(atag => {
+  atag.addEventListener('click', event => {
+    console.log('stopped the link');
+    event.preventDefault();
+  });
+});
