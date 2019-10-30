@@ -15,7 +15,7 @@ document.addEventListener('keydown', event => {
 //load event -> changes Fun Bus logo to "Todd's Bus"
 const loadEvent = document.querySelector('.logo-heading');
 window.addEventListener('load', () => {
-  loadEvent.textContent = 'Slow Bus';
+  alert((loadEvent.textContent = 'Slow Bus'));
 });
 
 //focus event // -> changes footer background purple
