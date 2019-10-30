@@ -46,7 +46,7 @@ window.addEventListener('scroll', () => {
 //mouse enter and mouse leave
 const mouseInEvent = document.querySelector('.intro img');
 mouseInEvent.addEventListener('mouseenter', () => {
-  mouseInEvent.style.transform = 'scale(2)';
+  mouseInEvent.style.transform = 'scale(1.4)';
   mouseInEvent.style.transition = 'all 0.5s';
 });
 
@@ -56,9 +56,23 @@ mouseOutEvent.addEventListener('mouseleave', () => {
   mouseOutEvent.style.transition = 'all 0.5s';
 });
 
-//Pick a different one
+//second click event
+const secondClickEvent = document
+  .querySelectorAll('.content-pick .destination h4')
+  .forEach(titles => {
+    titles.addEventListener('click', () => {
+      titles.style.background = 'salmon';
+    });
+  });
 
-//pick a different one
+//third click event
+const thirdClickEvent = document
+  .querySelectorAll('nav .nav-link')
+  .forEach(links => {
+    links.addEventListener('click', () => {
+      links.style.fontSize = '2.4rem';
+    });
+  });
 
 /**** Nest two similar events in the site and prevent event propogation using .stopPropogation() ******/
 const firstClick = document.querySelector('.intro h2');
