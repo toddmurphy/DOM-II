@@ -1,37 +1,37 @@
 // Your code goes here
-// mouseover event
+// mouseover event -> mouseover text to change color
 const busHeader = document.querySelector('.content-section .text-content');
 busHeader.addEventListener('mouseover', () => {
   busHeader.style.color = 'red';
 });
 
-//keydown must be on 'document'
+//keydown must be on 'document' -> press any key to add border to an image
 const imgKeyDown = document.querySelector('.content-section .img-content img');
 document.addEventListener('keydown', event => {
   imgKeyDown.style.border = '5px solid blue';
   console.log(event);
 });
 
-//load event
+//load event -> changes Fun Bus logo to "Todd's Bus"
 const loadEvent = document.querySelector('.logo-heading');
 window.addEventListener('load', () => {
   loadEvent.textContent = 'Slow Bus';
 });
 
-//focus event //
+//focus event // -> changes footer background purple
 const focusEvent = document.querySelector('footer');
 focusEvent.addEventListener('focus', () => {
   focusEvent.style.background = 'purple';
 });
 
-//resize event
+//resize event -> adds a Tesla car cockpit
 const resizeEvent = document.querySelector('.content-destination img');
 window.addEventListener('resize', event => {
   resizeEvent.src = 'img/bram-van-oost-oOCI35aIA3M-unsplash.jpg';
   // console.log(event);
 });
 
-//dblclick event
+//dblclick event -> double click "Home" nav to change text to "Todd's Bus"
 const dblClickEvent = document.querySelector('.nav a');
 dblClickEvent.addEventListener('dblclick', () => {
   dblClickEvent.textContent = "Todd's Bus";
@@ -43,7 +43,7 @@ window.addEventListener('scroll', () => {
   body.style.background = 'red';
 });
 
-//mouse enter and mouse leave
+//mouse enter and mouse leave -> main bus image grows and shrinks to orginial
 const mouseInEvent = document.querySelector('.intro img');
 mouseInEvent.addEventListener('mouseenter', () => {
   mouseInEvent.style.transform = 'scale(1.4)';
@@ -56,7 +56,7 @@ mouseOutEvent.addEventListener('mouseleave', () => {
   mouseOutEvent.style.transition = 'all 0.5s';
 });
 
-//second click event
+//second click event -> click titles to changle background color
 const secondClickEvent = document
   .querySelectorAll('.content-pick .destination h4')
   .forEach(titles => {
@@ -65,7 +65,7 @@ const secondClickEvent = document
     });
   });
 
-//third click event
+//third click event -> click nav links to make font bigger
 const thirdClickEvent = document
   .querySelectorAll('nav .nav-link')
   .forEach(links => {
